@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text will be hidden if the script runs successfully.
+  </div>
+  <script>
+    // This script attempts to modify the content of a non-existent element.
+    // This will cause no visual effect (no error thrown in modern browsers)
+    // because document.getElementById() returns null if no element is found, and
+    // setting innerHTML of null does nothing.
+    document.getElementById('nonExistentElement').innerHTML = 'This text should replace the div content';
+  </script>
+</body>
+</html>
